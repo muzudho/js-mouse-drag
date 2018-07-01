@@ -1,0 +1,27 @@
+body {
+	position: absolute; /* body要素は 10pxぐらい上側に隙間がある。 絶対位置で上に詰める。 */
+	height:2000px;
+}
+
+img.tile {
+	position: absolute;
+}
+
+div.deck0 {
+	position: absolute;
+	width: 300px;
+	height: 100px;
+	border: solid 5px #3C77B9;
+}
+div.deck1 {
+	position: absolute;
+	width: 300px;
+	height: 100px;
+	border: solid 5px #20762F;
+}
+
+span.msgBodyClientRect {
+	position: absolute;
+	top: 0;
+	left 0;
+}

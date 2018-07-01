@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>マウスドラッグの練習</title>
+    <link rel="stylesheet" href="http://warabenture.com/warabenture-w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/mouse-darg.css">
+	<script src="js/mouse-drag.js"></script>
+</head>
+
+<body id="board" onLoad="onLoad();">
+    <h1>マウスドラッグの練習<br/>
+        <small>- Practice of mouse drag.</small></h1>
+
+    <div class="w3-container w3-margin-bottom">
+        <h2 class="w3-margin-top" id="introduction">はじめに<br/>
+            <small> - Introduction.</small></h2>
+        <div class="wara-talk">
+            <img class="w3-image face" src="http://warabenture.com/grayscale/img/dot_e/char_kao/1100_KITASHIRAKAWA_Chiyuri/gif_anime/KITASHIRAKAWA_Chiyuri_80x100x8_01_Futu.gif" alt="KITASHIRAKAWA_Chiyuri" />
+            <div class="w3-card-4 w3-round-xxlarge w3-padding wara-fukidasi">
+                <p id="msg">好きなだけ練習しろだぜ☆<br/>
+					- Practice as much as you want.</p>
+            </div>
+        </div>
+    </div>
+
+	<div class="w3-round-xxlarge deck0" id="deck0"></div>
+	<div class="w3-round-xxlarge deck1" id="deck1"></div>
+	<img class="tile" src="http://game.warabenture.com/chicken-foot/img/0.png" id="tile0" alt="0.png" />
+	<img class="tile" src="http://game.warabenture.com/chicken-foot/img/1.png" id="tile1" alt="1.png" />
+
+	<span class="msgBodyClientRect" id="msgBodyClientRect">Body client rect</span>
+	
+</body>
+</html>
