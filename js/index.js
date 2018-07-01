@@ -32,13 +32,7 @@ function shuffle(a) {
 
 function onLoad() {
 
-    // Decks.
-    for (let iDeck = 0; iDeck < 2; iDeck += 1) {
-        let deckId = 'deck' + iDeck;
-        let deckObj = document.getElementById(deckId);
-        deckObj.style.left = "10px";
-        deckObj.style.top = (300 + 100 * iDeck) + "px";
-    }
+    loadDynamicStyle();
 
     // Board. ドロップされる側
     let board = document.getElementById('board');
@@ -59,10 +53,6 @@ function onLoad() {
         if (obj !== null) {
             G.angleDeg[id] = 0;
             obj.draggable = true;
-
-            // 初期位置
-            obj.style.left = Math.floor(Math.random() * 600) + 'px';
-            obj.style.top = Math.floor(Math.random() * 400) + 'px';
 
             // https://hakuhin.jp/js/data_transfer.html#DATA_TRANSFER_04
             obj.ondragstart = function (event) {

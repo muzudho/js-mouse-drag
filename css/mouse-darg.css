@@ -5,23 +5,5 @@ body {
 
 img.tile {
 	position: absolute;
-}
-
-div.deck0 {
-	position: absolute;
-	width: 300px;
-	height: 100px;
-	border: solid 5px #3C77B9;
-}
-div.deck1 {
-	position: absolute;
-	width: 300px;
-	height: 100px;
-	border: solid 5px #20762F;
-}
-
-span.msgBodyClientRect {
-	position: absolute;
-	top: 0;
-	left 0;
+    /* left, top, width, height to java script. */
 }
