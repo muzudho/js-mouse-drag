@@ -7,7 +7,12 @@
 /** Global variables. */
 G = {
 	/** 0 <= x < 360 */
-	angleDeg: []
+	angleDeg: [],
+	/** Mouse click on sprite. */
+	holdPoint: {
+		x: 0,
+		y: 0
+	}
 };
 
 /**
@@ -72,6 +77,23 @@ function onLoad() {
 				}
 			};
 
+			obj.ondragstart = function (event) {
+				let rectBodyClient = document.body.getBoundingClientRect();
+				
+				console.log( "body left: " + rectBodyClient.left +
+				", event.clientX: " + event.clientX +
+				", event.target.style.left: " + event.target.style.left);
+
+				console.log( "body top: " + rectBodyClient.top +
+				", event.clientY: " + event.clientY +
+				", event.target.style.top: " + event.target.style.top);
+				
+				G.holdPoint.x = event.clientX - parseInt(event.target.style.left,10) - rectBodyClient.left;
+				G.holdPoint.y = event.clientY - parseInt(event.target.style.top,10) - rectBodyClient.top;
+				console.log( "holdPoint x: " + G.holdPoint.x +
+					", y: " + G.holdPoint.y );
+			};
+			
 			obj.ondrag = function (event) {
 				let id = event.target.id;
 				if (!(event.clientX === 0 && event.clientY === 0)) {
@@ -83,12 +105,13 @@ function onLoad() {
 						rectBodyClient.left + ", top: " +
 						rectBodyClient.top + ", right: " +
 						rectBodyClient.right + ", bottom: " +
-						rectBodyClient.bottom + ")";
+						rectBodyClient.bottom + ") click point = (x: " + event.clientX + ", y: " + event.clientY + ")" +
+						" Target point = (left: " + obj.getBoundingClientRect().left + ", top: " + obj.getBoundingClientRect().top + ")";
 					elmMsgBodyClientRect.style.left = (0 - rectBodyClient.left) + "px";
 					elmMsgBodyClientRect.style.top = (0 - rectBodyClient.top) + "px";
-
-					obj.style.left = (event.clientX - rectBodyClient.left) + 'px';
-					obj.style.top = (event.clientY - rectBodyClient.top) + 'px';
+					
+					obj.style.left = (event.clientX - rectBodyClient.left - G.holdPoint.x) + 'px';
+					obj.style.top = (event.clientY - rectBodyClient.top - G.holdPoint.y) + 'px';
 				}
 			};
 
